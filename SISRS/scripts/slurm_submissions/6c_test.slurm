@@ -6,7 +6,7 @@
 #SBATCH --mail-user="erenada@uri.edu" #user email address
 #SBATCH --mail-type=ALL
 #SBATCH --exclusive
-#SBATCH --array=[0-32]%6 #CHANGE like 6a - bracketed numbers indicate number of total jobs you need(taxa) - 0 based, non-inclusive; following number = simultaneous
+#SBATCH --array=[1-32]%6 #CHANGE like 6a - bracketed numbers indicate number of total jobs you need(taxa) - 1 based, inclusive; following number = simultaneous
 #SBATCH -o %x_%A_%a.out
 #SBATCH -e %x_%A_%a.err
 cd $SLURM_SUBMIT_DIR
