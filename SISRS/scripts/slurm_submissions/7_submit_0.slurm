@@ -23,4 +23,4 @@ module load BEDTools/2.29.2-GCC-8.3.0
 
 #CHANGE following example
 #python3 sisrs_07_output_sisrs.py -m <list of number of species allowed to be missing> -d <main output folder>
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/sisrs_07_output_sisrs.py -m 0 1 2 3 4 5 -d /data/schwartzlab/eren/Chapter2 
+python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/sisrs_07_output_sisrs.py -m 0 -d /data/schwartzlab/eren/Chapter2
