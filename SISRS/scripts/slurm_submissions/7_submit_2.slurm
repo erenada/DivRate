@@ -26,15 +26,3 @@ python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/filter_nexus_for_missing_n
 
 grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_locs_m2.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_locs_m2_Clean.txt
 grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_locs_m2_nogap.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_locs_m2_nogap_Clean.txt
-
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/filter_nexus_for_missing.py /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi.nex 2
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/filter_nexus_for_missing_nogap.py /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi.nex 2
-
-grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi_locs_m2.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi_locs_m2_Clean.txt
-grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi_locs_m2_nogap.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_bi_locs_m2_nogap_Clean.txt
-
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/filter_nexus_for_missing.py /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi.nex 2
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/filter_nexus_for_missing_nogap.py /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi.nex 2
-
-grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi_locs_m2.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi_locs_m2_Clean.txt
-grep -oe "SISRS_[^/]*" /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi_locs_m2_nogap.txt | uniq -c | sort -k1 -nr | awk '{print $2}' > /data/schwartzlab/eren/Chapter2/SISRS_Run/alignment_pi_locs_m2_nogap_Clean.txt
