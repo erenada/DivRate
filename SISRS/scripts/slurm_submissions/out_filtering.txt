@@ -1,0 +1,19 @@
+# Output stats
+
+With 0 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 1663292 sites (19841855 sites or 92.27% lost)
+With 0 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 1622626 sites (19882521 sites or 92.45% lost)
+
+With 1 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 3148587 sites (18356560 sites or 85.36% lost)
+With 1 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 3082683 sites (18422464 sites or 85.67% lost)
+
+With 2 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 4290869 sites (17214278 sites or 80.05% lost)
+With 2 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 4207551 sites (17297596 sites or 80.43% lost)
+
+With 3 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 5298862 sites (16206285 sites or 75.36% lost)
+With 3 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 5200406 sites (16304741 sites or 75.82% lost)
+
+With 4 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 6288917 sites (15216230 sites or 70.76% lost)
+With 4 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 6175057 sites (15330090 sites or 71.29% lost)
+
+With 5 taxa allowed to be missing, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 7299702 sites (14205445 sites or 66.06% lost)
+With 5 taxa allowed to be missing, and with no gaps allowed, 21505147 sites from alignment.nex (30 allowed missing) are reduced to 7169791 sites (14335356 sites or 66.66% lost)
