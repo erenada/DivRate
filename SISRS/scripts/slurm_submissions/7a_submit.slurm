@@ -16,4 +16,4 @@ module load BBMap/38.87-foss-2020b
 module load BEDTools/2.30.0-GCC-10.2.0
 module load Biopython/1.78-foss-2020b
 
-python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/sisrs_07_a_contigs_processing.py -trh 5 -dir /data/schwartzlab/eren/Chapter2
+python3 /data/schwartzlab/eren/Chapter2/SISRS/scripts/sisrs_07_a_contigs_processing.py -trh 27 -dir /data/schwartzlab/eren/Chapter2
