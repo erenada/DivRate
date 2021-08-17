@@ -24,10 +24,9 @@ randomcount=$4 #only in use for randomly selecting contigs - change for loop, gi
 
 for alignment in $(ls $alignFolder/*fasta | sort -R | tail -$randomcount);
 do
-contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
+#contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 #for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
-do
-raxmlHPC -f e -t $1 -m GTRGAMMA -s $alignment -n "$contigName"
+raxmlHPC -f e -t $1 -m GTRGAMMA -s $alignment -n "$alignment"
 done
 
 #name change for tree files
