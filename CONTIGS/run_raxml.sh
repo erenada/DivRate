@@ -9,6 +9,8 @@
 #SBATCH -o run_raxml.out
 #SBATCH -e run_raxml.err
 
+module load RAxML/8.2.12-intel-2019b-hybrid-avx2
+
 #this script runs raxml for each alignment on a reference tree
 
 #usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
