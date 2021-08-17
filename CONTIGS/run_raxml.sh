@@ -34,7 +34,7 @@ done
 
 #name change for tree files
 
-mv $var0/RaxML_* $var3/
+mv $var0/RAxML_* $var3/
 
 cd $var0/$var3
 
