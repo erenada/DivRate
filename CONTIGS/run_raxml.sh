@@ -13,7 +13,7 @@ var0=$SLURM_SUBMIT_DIR
 var1="$var0/JarvisFinalTree.nwk" #tree file
 var2="/data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs" #input contigs folder
 var3="$var0/raxml_out" #output folder
-var4="10" #alignment number
+var4="1000" #alignment number
 
 
 #module load RAxML/8.2.12-intel-2019b-hybrid-avx2
