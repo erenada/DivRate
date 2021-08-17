@@ -13,6 +13,8 @@
 
 #usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
 
+# sbatch run_raxml.sh RefTree/JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
+
 tree=$1 #path to the tree file
 alignFolder=$2 #path to the alignment folder
 outFolder=$3 #path to the output folder
