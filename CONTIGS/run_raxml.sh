@@ -15,7 +15,7 @@
 
 #usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
 
-# sbatch run_raxml.sh RefTree/JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
+# sbatch run_raxml.sh ./RefTree/JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
 tree=$1 #path to the tree file
 alignFolder=$2 #path to the alignment folder
@@ -28,7 +28,7 @@ for alignment in $(ls $alignFolder | sort -R | tail -$randomcount);
 do
 contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 #for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
-/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $1 -m GTRGAMMA -s $alignment -n "$contigName" -T 10
+/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $1 -m GTRGAMMA -s $alignFolder/$alignment -n "$contigName" -T 10
 done
 
 #name change for tree files
