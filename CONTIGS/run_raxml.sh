@@ -20,12 +20,13 @@ module load RAxML/8.2.12-intel-2019b-hybrid-avx2
 tree=$1 #path to the tree file
 alignFolder=$2 #path to the alignment folder
 outFolder=$3 #path to the output folder
-randomcount=$4 #only in use for randomly selecting contigs - change for loop, give a numer eg: 100,
+randomcount=$4 #only in use for randomly selecting contigs - change for loop, give a numer eg: 100
 
 for alignment in $(ls $alignFolder/*fasta | sort -R | tail -$randomcount);
+do
+contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 #for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
 do
-  contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 raxmlHPC -f e -t $1 -m GTRGAMMA -s $alignment -n "$contigName"
 done
 
