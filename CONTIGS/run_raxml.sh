@@ -1,8 +1,17 @@
 #!/bin/bash
+#SBATCH --job-name="run_raxml"
+#SBATCH --time=120:00:00  # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=20   # CHANGE THIS to the number of processors
+#SBATCH --mail-user="erenada@uri.edu" #CHANGE THIS to your user email address
+#SBATCH --mail-type=ALL
+#SBATCH --exclusive
+#SBATCH -o run_raxml.out
+#SBATCH -e run_raxml.err
 
 #this script runs raxml for each alignment on a reference tree
 
-#usage: s/batch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
+#usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
 
 tree=$1 #path to the tree file
 alignFolder=$2 #path to the alignment folder
