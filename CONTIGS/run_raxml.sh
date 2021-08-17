@@ -34,9 +34,9 @@ done
 
 #name change for tree files
 
-mv RaxML_* $outFolder/
+mv $submit_directory/RaxML_* $submit_directory/$outFolder
 
-cd $outFolder
+cd $submit_directory/$outFolder
 
 for tree in $(ls *result*);
 do
