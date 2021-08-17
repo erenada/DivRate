@@ -25,7 +25,7 @@ var4="1000" #alignment number
 # sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
 
-for alignment in $(ls $var2 | sort -R | tail -$randomcount);
+for alignment in $(ls $var2 | sort -R | tail -$var4);
 do
 contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 #for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
