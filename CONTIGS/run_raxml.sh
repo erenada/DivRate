@@ -8,11 +8,12 @@
 #SBATCH --exclusive
 #SBATCH -o run_raxml.out
 #SBATCH -e run_raxml.err
-#SBATCh --export=tree=$1 #path to the tree file
-#SBATCh --export=alignFolder=$2 #path to the alignment folder
-#SBATCh --export=outFolder=$3 #path to the output folder
-#SBATCh --export=randomcount=$4 #only in use for randomly selecting contigs - change for loop, give a numer eg: 100
-#SBATCh --export=submit_directory=$(pwd) #change in bash
+#SBATCH --export=tree=$1
+#SBATCH --export=alignFolder=$2 #path to the alignment folder
+#SBATCH --export=outFolder=$3 #path to the output folder
+#SBATCH --export=randomcount=$4 #only in use for randomly selecting contigs - change for loop, give a numer eg: 100
+
+submit_directory=$SLURM_SUBMIT_DIR
 
 #module load RAxML/8.2.12-intel-2019b-hybrid-avx2
 
@@ -22,8 +23,6 @@
 
 # sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
-
-cd $alignFolder
 
 for alignment in $(ls $alignFolder | sort -R | tail -$randomcount);
 do
