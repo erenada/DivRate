@@ -28,7 +28,7 @@ for alignment in $(ls $alignFolder | sort -R | tail -$randomcount);
 do
 contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
 #for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
-raxmlHPC-PTHREADS-SSE3 -f e -t $1 -m GTRGAMMA -s $alignment -n "$contigName" -T 10
+/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $1 -m GTRGAMMA -s $alignment -n "$contigName" -T 10
 done
 
 #name change for tree files
