@@ -6,6 +6,9 @@
 #SBATCH --mail-user="erenada@uri.edu" #user email address
 #SBATCH --mail-type=END,FAIL
 #SBATCH --exclusive
+#SBATCH -o %x_%A.out
+#SBATCH -e %x_%A.err
+
 cd $SLURM_SUBMIT_DIR
 
 module purge
