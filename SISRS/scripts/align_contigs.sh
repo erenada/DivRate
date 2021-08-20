@@ -25,5 +25,5 @@ ARRLEN=${#FILELIST[@]}
 for (( i = 0; i < $ARRLEN; i++ ))
 do
   out_file="$(basename ${FILELIST[i]})" # contig file
-  mafft --auto --thread $THR ${FILELIST[i]} > $PTH_OUT${out_file}
+  mafft --nwildcard --auto --thread $THR ${FILELIST[i]} > $PTH_OUT${out_file}
 done
