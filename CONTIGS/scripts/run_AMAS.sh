@@ -18,7 +18,7 @@ module purge
 
 module load Python/3.7.4-GCCcore-8.3.0
 
-python3 /data/schwartzlab/eren/Chapter2/CONTIGS/scripts/AMAS.py concat -f fasta -d dna -i /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs/*.fasta -c 20
+python3 /data/schwartzlab/eren/Chapter2/CONTIGS/scripts/AMAS.py concat -f fasta -d dna -i /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs/* -c 20
 
 mv /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs/partitions.txt /data/schwartzlab/eren/Chapter2/CONTIGS/concatenated_contigs/partitions.txt
 mv /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs/concatenated.out /data/schwartzlab/eren/Chapter2/CONTIGS/concatenated_contigs/concatenated.out
