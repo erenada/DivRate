@@ -13,23 +13,26 @@ var0=$SLURM_SUBMIT_DIR
 var1="$var0/JarvisFinalTree.nwk" #tree file
 var2="/data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs" #input contigs folder
 var3="$var0/raxml_out" #output folder
-var4="1000" #alignment number
+#var4="50000" #alignment number
+
 
 
 #module load RAxML/8.2.12-intel-2019b-hybrid-avx2
 
 #this script runs raxml for each alignment on a reference tree
 
-#usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
+#usage: sbatch ./run_raxml.sh
 
-# sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
+# for random est. usage: sbatch run_raxml.sh </tree.nwk> </alignFolder> <outFolder> <randomcount>
+
+## sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
 
-for alignment in $(ls $var2 | sort -R | tail -$var4);
+#for alignment in $(ls $var2 | sort -R | tail -$var4);
+for alignment in $(ls $var2); # go through each fasta file
 do
-contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1)
-#for alignment in $(ls $alignFolder/*fasta); # go through each fasta file
-/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $var1 -m GTRGAMMA -s $var2/$alignment -n "$contigName" -T 10
+contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1);
+/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $var1 -m GTRGAMMA -s $var2/$alignment -n "$contigName" -T 20
 done
 
 #name change for tree files
