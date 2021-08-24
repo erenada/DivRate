@@ -11,10 +11,9 @@
 
 var0=$SLURM_SUBMIT_DIR
 var1="$var0/JarvisFinalTree.nwk" #tree file
-var2="/data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs" #input contigs folder
-var3="$var0/raxml_out" #output folder
+var2="/data/schwartzlab/eren/Chapter2/CONTIGS" #input contigs folder
+var3="raxml_out/concat_out" #output folder
 #var4="50000" #alignment number
-
 
 
 #module load RAxML/8.2.12-intel-2019b-hybrid-avx2
@@ -27,7 +26,6 @@ var3="$var0/raxml_out" #output folder
 
 ## sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
-
 #for alignment in $(ls $var2 | sort -R | tail -$var4);
 for alignment in $(ls $var2); # go through each fasta file
 do
@@ -37,7 +35,7 @@ done
 
 #name change for tree files
 
-mv $var0/RAxML_* $var3/
+mv $var0/RAxML_* $var0/$var3
 
 cd $var0/$var3
 
