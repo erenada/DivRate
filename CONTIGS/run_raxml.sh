@@ -27,19 +27,20 @@ var3="raxml_out/concat_out" #output folder
 ## sbatch run_raxml.sh JarvisFinalTree.nwk /data/schwartzlab/eren/Chapter2/SISRS_Run/aligned_contigs /raxml_out 100
 
 #for alignment in $(ls $var2 | sort -R | tail -$var4);
-for alignment in $(ls $var2); # go through each fasta file
-do
-contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1);
-/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t $var1 -m GTRGAMMA -s $var2/$alignment -n "$contigName" -T 20
+cd /data/schwartzlab/eren/Chapter2/CONTIGS
+#for alignment in $(ls $var2); # go through each fasta file
+#do
+#contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1);
+/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t JarvisFinalTree.nwk -m GTRGAMMA -s /data/schwartzlab/eren/Chapter2/CONTIGS/concatenated_contigs/concatenated.fasta -n concatenated -T 20
 done
 
 #name change for tree files
 
-mv $var0/RAxML_* $var0/$var3
+#mv $var0/RAxML_* $var0/$var3
 
-cd $var0/$var3
+#cd $var0/$var3
 
-for tree in $(ls *result*);
-do
-  mv $tree $tree.nwk
-done
+#for tree in $(ls *result*);
+#do
+  #mv $tree $tree.nwk
+#done
