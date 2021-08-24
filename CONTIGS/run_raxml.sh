@@ -6,8 +6,8 @@
 #SBATCH --mail-user="erenada@uri.edu" #CHANGE THIS to your user email address
 #SBATCH --mail-type=ALL
 #SBATCH --exclusive
-#SBATCH -o run_raxml.out
-#SBATCH -e run_raxml.err
+#SBATCH -o run_concat_raxml.out
+#SBATCH -e run_concat_raxml.err
 
 var0=$SLURM_SUBMIT_DIR
 var1="$var0/JarvisFinalTree.nwk" #tree file
