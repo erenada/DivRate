@@ -7,3 +7,6 @@ for contig in $(cut -d'/' -f 1 /data/schwartzlab/eren/Chapter2/SISRS_Run/missing
 do
   cp /data/schwartzlab/eren/Chapter2/CONTIGS/contigs_29M/$contig.fasta /data/schwartzlab/eren/Chapter2/CONTIGS/contigs_5M/
 done
+
+
+#cut -d'/' -f 1 alignment_locs_m5_nogap.txt | uniq -c | sort -bgr | sed 's/[[:space:]]//' > sorted_frequencies.csv

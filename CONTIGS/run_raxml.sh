@@ -32,7 +32,7 @@ cd /data/schwartzlab/eren/Chapter2/CONTIGS
 #do
 #contigName=$(echo "$alignment" | cut -d "-" -f 2 | cut -d "." -f 1);
 /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t JarvisFinalTree.nwk -m GTRGAMMA -s /data/schwartzlab/eren/Chapter2/CONTIGS/concatenated_contigs/concatenated.fasta -n concatenated -T 20
-done
+#done
 
 #name change for tree files
 
