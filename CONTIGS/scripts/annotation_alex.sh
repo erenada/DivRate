@@ -17,7 +17,7 @@ outputMode="l"
 module purge
 module load Biopython/1.78-foss-2020b
 #
-python ${scripts_dir}getTaxContigs.py ${taxonName} ${sisrsContigs}
+python ${scripts_dir}annotation_getTaxContigs.py ${taxonName} ${sisrsContigs}
 
 #Andromeda (URI's cluster) specific
 module purge
