@@ -6,8 +6,8 @@
 
 cd $SLURM_SUBMIT_DIR
 date
-scripts_dir="/data/schwartzlab/eren/Chapter2/CONTIGS/scripts"
-sisrsContigs="/data/schwartzlab/eren/Chapter2/CONTIGS/contigs_TRH27"
+scripts_dir="/data/schwartzlab/eren/Chapter2/CONTIGS/scripts/"
+sisrsContigs="/data/schwartzlab/eren/Chapter2/CONTIGS/contigs_TRH27/"
 taxonName="ColLiv"
 assemblyDB="/data/schwartzlab/eren/Reference_Genomes/Birds/ColLiv/GCF_000337935.1_Cliv_1.0_genomic.fna"
 assemblyGFF="/data/schwartzlab/eren/Reference_Genomes/Birds/ColLiv/GCF_000337935.1_Cliv_1.0_genomic.gff"
