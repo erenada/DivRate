@@ -12,7 +12,7 @@
 module load MAFFT/7.475-gompi-2020b-with-extensions
 
 listOfData=$(cat /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq)
-PTH=(/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/)
+PTH=(/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation)
 PTH_OUT=(/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED)
 
 for type in $listOfData;
@@ -22,7 +22,7 @@ do
   ARRLEN=${#FILELIST[@]}
   for infile in $FILELIST;
   do
-    out_file="$(basename ${FILELIST[i]})"
-    mafft --nwildcard --auto --thread 20 ${infile} > $PTH/${type}/${out_file}
+    out_file=$(basename ${FILELIST[i]})
+    mafft --nwildcard --auto --thread 20 ${infile} > ${PTH}/${type}/${out_file}
   done
 done
