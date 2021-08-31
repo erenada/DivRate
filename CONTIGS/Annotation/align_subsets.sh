@@ -18,11 +18,11 @@ PTH_OUT=(/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED)
 for type in $listOfData;
 do
   mkdir /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED/${type}
-  FILELIST=( $( find $PTH/${type} -maxdepth 1 -type f ) )
+  FILELIST=$(ls $PTH/${type}/*.fasta)
   ARRLEN=${#FILELIST[@]}
-  for (( i = 0; i < $ARRLEN; i++ ));
+  for infile in $FILELIST;
   do
     out_file="$(basename ${FILELIST[i]})"
-    mafft --nwildcard --auto --thread 20 ${FILELIST[i]} > $PTH/${type}/${out_file}
+    mafft --nwildcard --auto --thread 20 ${infile} > $PTH/${type}/${out_file}
   done
 done
