@@ -23,6 +23,6 @@ do
   for infile in $FILELIST;
   do
     out_file=$(basename ${infile})
-    echo mafft --nwildcard --auto --thread 20 ${infile} > ${PTH}/${type}/${out_file}
+    echo mafft --nwildcard --auto --thread 20 ${infile} ${PTH}/${type}/${out_file}
   done
 done
