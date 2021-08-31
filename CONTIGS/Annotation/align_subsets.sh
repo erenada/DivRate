@@ -22,7 +22,7 @@ do
   ARRLEN=${#FILELIST[@]}
   for infile in $FILELIST;
   do
-    out_file=$(basename ${FILELIST[i]})
-    echo mafft --nwildcard --auto --thread 20 ${infile} > ${PTH}/${type}/${out_file}
+    out_file=$(basename ${infile})
+    mafft --nwildcard --auto --thread 20 ${infile} > ${PTH}/${type}/${out_file}
   done
 done
