@@ -2,7 +2,7 @@
 
 cd /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation
 
-listOfData=$(cat annotations.csv | tail -n +2 | cut -f 2 | sort | uniq)
+listOfData=$(cat annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq)
 
 for type in $listOfData;
 do
