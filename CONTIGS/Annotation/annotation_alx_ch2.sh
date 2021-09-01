@@ -8,7 +8,7 @@ cd $SLURM_SUBMIT_DIR
 date
 
 scripts_dir="/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/"
-sisrsContigs="/data/schwartzlab/eren/Chapter1/SISRS_Run/contigs_outputs/"
+sisrsContigs="XX"
 taxonName="GalGal"
 assemblyDB="/data/schwartzlab/eren/Reference_Genomes/Birds/GalGal/GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b_genomic.fna"
 assemblyGFF="/data/schwartzlab/eren/Reference_Genomes/Birds/GalGal/GCF_016699485.2_bGalGal1.mat.broiler.GRCg7b_genomic.gff"
