@@ -18,6 +18,6 @@ do
   alignmentList=$(tail -n +2 /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/"$type"_table.csv | cut -f 1)
   for file in $alignmentList;
   do
-    ln -s /data/schwartzlab/eren/Chapter2/SISRS_Run/contigs_outputs/${file} /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/${type}/${file}
+    ln -s /data/schwartzlab/eren/Chapter2/SISRS_Run/contigs_outputs/${file} /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/${type}/${file}
   done
 done
