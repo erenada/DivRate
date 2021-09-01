@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="align_subsets"
+#SBATCH --job-name="align_subsets_2"
 #SBATCH --time=99:00:00  # walltime limit (HH:MM:SS)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # CHANGE THIS to processor core(s) per node
@@ -17,9 +17,8 @@ PTH_OUT=(/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED)
 
 for type in $listOfData;
 do
-  mkdir /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED/${type}
+  mkdir ${PTH_OUT}/${type}
   FILELIST=$(ls $PTH/${type}/*.fasta)
-  ARRLEN=${#FILELIST[@]}
   for infile in $FILELIST;
   do
     out_file=$(basename ${infile})
