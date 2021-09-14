@@ -46,5 +46,5 @@ cd $CONCATDIR
 for type in $(set -- */; printf "%s\n" "${@%/}");
 do
   mkdir ${CONCATDIR}/${type}
-  "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s ${CONCATDIR}/"${type}".fasta  -n "${type}" -T 20 -w ${OutPathCONCAT}/${type}
+  "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s ${CONCATDIR}/"${type}".fasta  -n "${type}" -T 20 -q "${type}"/"${type}"_partition.txt -w ${OutPathCONCAT}/${type}
 done
