@@ -31,7 +31,8 @@ do
   mkdir ${OutPathSEP}/${type}
     for seq in $(find ${AlignPath}/${type} -name *.fasta);
   do
-    /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t "${RefTree}" -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
+    seqname=$(basename $seq)
+    /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t "${RefTree}" -m GTRGAMMA -s ${seq} -n "${seqname}" -T 20 -w ${OutPathSEP}/${type}
   done
 done
 
