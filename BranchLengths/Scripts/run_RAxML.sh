@@ -9,8 +9,6 @@
 #SBATCH -o %x_%A.out
 #SBATCH -e %x_%A.err
 
-module purge
-
 
 # first part of the scripts calculates the branch lengths for each sequence in data type.
 
@@ -18,11 +16,13 @@ AlignPath=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED")
 
 #RAxML=$(/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3)
 
-RefTree=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/RefTree/JarvisFinalTree.nwk")
+cd $AlignPath
+
+cp /data/schwartzlab/eren/Chapter2/CONTIGS/RefTree/JarvisFinalTree.nwk $AlignPath/JarvisFinalTree.nwk
+
+RefTree=$(echo "./JarvisFinalTree.nwk")
 
 OutPathSEP=$(echo "/data/schwartzlab/eren/Chapter2/BranchLengths/RAxML_OUT/SEP")
-
-cd $AlignPath
 
 ListOfData=$(set -- */; printf "%s\n" "${@%/}")
 
@@ -31,7 +31,7 @@ do
   mkdir ${OutPathSEP}/${type}
     for seq in $(find ${AlignPath}/${type} -name *.fasta);
   do
-    /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t ${RefTree} -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
+    /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t "${RefTree}" -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
   done
 done
 
