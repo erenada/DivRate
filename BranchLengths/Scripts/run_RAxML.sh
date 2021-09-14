@@ -16,7 +16,7 @@ module purge
 
 AlignPath=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED")
 
-RAxML=$(/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3)
+#RAxML=$(/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3)
 
 RefTree=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/RefTree/JarvisFinalTree.nwk")
 
@@ -28,10 +28,10 @@ ListOfData=$(set -- */; printf "%s\n" "${@%/}")
 
 for type in ${ListOfData};
 do
-  mkdir ${OutPathSEP}/${type};
-  for seq in $(find ${AlignPath}/${type} -name *.fasta);
+  mkdir ${OutPathSEP}/${type}
+    for seq in $(find ${AlignPath}/${type} -name *.fasta);
   do
-    "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
+    /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t ${RefTree} -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
   done
 done
 
@@ -45,6 +45,5 @@ cd $CONCATDIR
 
 for type in $(set -- */; printf "%s\n" "${@%/}");
 do
-  mkdir ${CONCATDIR}/${type}
-  "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s "${type}"/"${type}".fasta  -n "${type}" -q "${type}"/"${type}"_partition.txt -w ${OutPathCONCAT}/${type} -T 20
+  /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t ${RefTree} -m GTRGAMMA -s "${type}"/"${type}".fasta  -n "${type}"  -T 20 -q "${type}"/"${type}"_partition.txt -w ${OutPathCONCAT}/${type}
 done
