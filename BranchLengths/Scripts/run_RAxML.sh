@@ -31,7 +31,7 @@ do
   mkdir ${OutPathSEP}/${type};
   for seq in $(find ${AlignPath}/${type} -name *.fasta);
   do
-    ${RAxML} -f e -t ${RefTree} -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
+    "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s ${seq} -n "${seq}" -T 20 -w ${OutPathSEP}/${type}
   done
 done
 
@@ -46,5 +46,5 @@ cd $CONCATDIR
 for type in $(set -- */; printf "%s\n" "${@%/}");
 do
   mkdir ${CONCATDIR}/${type}
-  ${RAxML} -f e -t ${RefTree} -m GTRGAMMA -s ${CONCATDIR}/"${type}".fasta  -n "${type}" -T 20 -w ${OutPathCONCAT}/${type}
+  "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s ${CONCATDIR}/"${type}".fasta  -n "${type}" -T 20 -w ${OutPathCONCAT}/${type}
 done
