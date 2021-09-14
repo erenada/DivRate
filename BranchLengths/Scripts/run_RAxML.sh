@@ -45,5 +45,10 @@ cd $CONCATDIR
 
 for type in $(set -- */; printf "%s\n" "${@%/}");
 do
+<<<<<<< HEAD
   /data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3 -f e -t ${RefTree} -m GTRGAMMA -s "${type}"/"${type}".fasta  -n "${type}"  -T 20 -q "${type}"/"${type}"_partition.txt -w ${OutPathCONCAT}/${type}
+=======
+  mkdir ${CONCATDIR}/${type}
+  "${RAxML}" -f e -t ${RefTree} -m GTRGAMMA -s "${type}"/"${type}".fasta  -n "${type}" -q "${type}"/"${type}"_partition.txt -w ${OutPathCONCAT}/${type} -T 20
+>>>>>>> 3c9d6b7f163cfcc8cb024dd6096cc922160aef56
 done
