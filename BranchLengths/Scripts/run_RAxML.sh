@@ -18,13 +18,13 @@ AlignPath=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED")
 
 RAxML=$(/data/schwartzlab/eren/programs/standard-RAxML/raxmlHPC-PTHREADS-SSE3)
 
-ListOfData=$(ls /data/schwartzlab/eren/Chapter2/CONTIGS/Annotation/ALIGNED)
-
 RefTree=$(echo "/data/schwartzlab/eren/Chapter2/CONTIGS/RefTree/JarvisFinalTree.nwk")
 
 OutPathSEP=$(echo "/data/schwartzlab/eren/Chapter2/BranchLengths/RAxML_OUT/SEP")
 
 cd $AlignPath
+
+ListOfData=$(set -- */; printf "%s\n" "${@%/}")
 
 for type in ${ListOfData};
 do
@@ -43,7 +43,7 @@ OutPathCONCAT=$(echo "/data/schwartzlab/eren/Chapter2/BranchLengths/RAxML_OUT/CO
 
 cd $CONCATDIR
 
-for type in $(ls $CONCATDIR);
+for type in $(set -- */; printf "%s\n" "${@%/}");
 do
   mkdir ${CONCATDIR}/${type}
   ${RAxML} -f e -t ${RefTree} -m GTRGAMMA -s ${CONCATDIR}/"${type}".fasta  -n "${type}" -T 20 -w ${OutPathCONCAT}/${type}
